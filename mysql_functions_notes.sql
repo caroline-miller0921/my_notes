@@ -56,4 +56,43 @@ select * from albums;
 
 select upper(artist), artist, lower(artist) from albums;
 
+-- Replace
+
+-- format:  REPLACE(string, from_string, new_string);
+
+select replace('hello oneil!', 'oneil', 'O\'Neil');
+SHOW DATABASES; 
+USE albums_db;
+
+select genre, replace(genre, 'rock', '******ROCK*****') from albums;
+
+select genre, replace(lower(genre), 'rock', '*****ROCK****') as genre_ROCKS from albums;
+
+-- TIME and DATE Functions
+
+select now();
+
+select current_date();
+
+select curdate();
+
+select curtime();
+
+select now(), current_time(), curtime(), current_date();
+
+select convert_tz(NOW(), '+00:00', '-06:00');
+
+-- CASTING: change the data type of a variable
+-- format:  CAST(value as);
+
+select 1 + '2';
+-- see that an int plus a string will give you the sum in MySQL
+
+select month('2023-01-23');
+
+select 1 + cast('2' as unsigned); -- must tell it what to cast the variable as, in this case unsigned
+
+
+
+
 
